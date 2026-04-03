@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply font-sans text-neutral-800 bg-neutral-50;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold text-primary-900 tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold text-primary-800 tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-bold text-primary-800;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-primary-700;
+  }
+
+  a {
+    @apply text-primary-600 hover:text-primary-800 transition-colors duration-200 font-medium;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6 border border-neutral-200;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between mb-4 pb-4 border-b border-neutral-200;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold text-primary-900;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-neutral-200 text-primary-900 hover:bg-neutral-300 active:bg-neutral-400 focus:ring-neutral-400;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 active:bg-red-800 focus:ring-red-500;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-600 text-primary-600 hover:bg-primary-50 focus:ring-primary-500;
+  }
+
+  .btn-sm {
+    @apply text-sm px-3 py-1.5;
+  }
+
+  .btn-lg {
+    @apply text-lg px-6 py-3;
+  }
+
+  .form-group {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-primary-900 mb-2;
+  }
+
+  .form-input,
+  .form-select {
+    @apply w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-neutral-900 placeholder-neutral-400;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white text-neutral-900 placeholder-neutral-400;
+  }
+
+  .table-container {
+    @apply overflow-x-auto rounded-lg border border-neutral-200;
+  }
+
+  .table {
+    @apply w-full;
+  }
+
+  .table th {
+    @apply bg-primary-50 text-primary-900 font-semibold text-sm py-3 px-4 text-left border-b border-primary-200;
+  }
+
+  .table td {
+    @apply py-3 px-4 border-b border-neutral-200;
+  }
+
+  .table tbody tr {
+    @apply hover:bg-neutral-50 transition-colors;
+  }
+
+  .table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-900;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-900;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-900;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-900;
+  }
+
+  .alert {
+    @apply px-4 py-3 rounded-lg flex items-start gap-3 border;
+  }
+
+  .alert-info {
+    @apply alert bg-blue-50 text-blue-900 border-blue-300;
+  }
+
+  .alert-success {
+    @apply alert bg-green-50 text-green-900 border-green-300;
+  }
+
+  .alert-warning {
+    @apply alert bg-yellow-50 text-yellow-900 border-yellow-300;
+  }
+
+  .alert-error {
+    @apply alert bg-red-50 text-red-900 border-red-300;
+  }
+
+  .divider {
+    @apply border-t border-neutral-200;
+  }
+
+  .text-muted {
+    @apply text-neutral-500;
+  }
+
+  .text-light {
+    @apply text-neutral-400;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}

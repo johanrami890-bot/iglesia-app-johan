@@ -1,0 +1,32 @@
+# Sistema de Recordatorios por Correo
+
+He implementado un script para enviar recordatorios automáticos a las personas asignadas para el día de mañana.
+
+## Configuración (Backend Node.js)
+
+1. Abre el archivo `c:\iglesia-app\backend\.env`.
+2. Completa los datos:
+   - `EMAIL_USER`: Tu correo de Gmail.
+   - `EMAIL_PASS`: Tu **contraseña de aplicación** (no tu contraseña normal).
+3. Abre una terminal en `c:\iglesia-app\backend` y ejecuta:
+   ```bash
+   npm install nodemailer
+   ```
+
+## Cómo ejecutarlo
+
+### Manualmente
+- Haz doble clic en `c:\iglesia-app\backend\run-reminders.bat`.
+
+### Automáticamente (Recomendado)
+Para que los correos se envíen solos todos los días:
+1. Abre el **Programador de Tareas** de Windows.
+2. Crea una "Tarea Básica" llamada `Recordatorios IPUL`.
+3. Elige que se ejecute "Diariamente" (ej. a las 8:00 AM).
+4. En "Acción", elige "Iniciar un programa".
+5. En "Programa o script", busca el archivo `run-reminders.bat`.
+
+## Versión PHP
+Si prefieres usar la versión de PHP:
+- El script está en `c:\xampp\htdocs\iglesia\run-reminders.bat`.
+- Requiere configurar el SMTP en el archivo `php.ini` de XAMPP.
