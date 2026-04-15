@@ -26,20 +26,6 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
-
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/tareas', tareasRoutes);
-app.use('/api/asignaciones', asignacionesRoutes);
-app.use('/api/solicitudes', solicitudesRoutes);
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something broke!' });
-});
-// Rutas legales para registro de SMS A2P
 app.get('/privacy-policy', (req, res) => {
     res.send(`
         <html>
@@ -65,6 +51,18 @@ app.get('/terms-and-conditions', (req, res) => {
     `);
 });
 
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/usuarios', usuariosRoutes);
+app.use('/api/tareas', tareasRoutes);
+app.use('/api/asignaciones', asignacionesRoutes);
+app.use('/api/solicitudes', solicitudesRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something broke!' });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
