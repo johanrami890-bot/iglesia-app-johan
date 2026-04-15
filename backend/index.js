@@ -58,6 +58,33 @@ app.use('/api/tareas', tareasRoutes);
 app.use('/api/asignaciones', asignacionesRoutes);
 app.use('/api/solicitudes', solicitudesRoutes);
 
+
+pp.get('/privacy-policy', (req, res) => {
+  res.send(`
+    <html>
+      <body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
+        <h1>Privacy Policy</h1>
+        <p>At Iglesia App, we value your privacy. This policy outlines how we handle your personal information.</p>
+        <p><strong>Information Collection:</strong> We collect phone numbers for the purpose of sending community notifications and security codes.</p>
+        <p><strong>Usage:</strong> Your information is never sold to third parties and is used strictly for church communication.</p>
+      </body>
+    </html>
+  `);
+});
+
+app.get('/terms-and-conditions', (req, res) => {
+  res.send(`
+    <html>
+      <body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
+        <h1>Terms and Conditions</h1>
+        <p><strong>Program Description:</strong> This service sends community notifications and event updates.</p>
+        <p><strong>Opt-Out:</strong> You can cancel the SMS service at any time. Just text "STOP" to our number.</p>
+        <p><strong>Help:</strong> Text "HELP" for assistance.</p>
+        <p><strong>Rates:</strong> Message and data rates may apply.</p>
+      </body>
+    </html>
+  `);
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
