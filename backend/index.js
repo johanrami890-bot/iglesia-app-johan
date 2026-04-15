@@ -39,6 +39,32 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something broke!' });
 });
+// Rutas legales para registro de SMS A2P
+app.get('/privacy-policy', (req, res) => {
+    res.send(`
+        <html>
+        <body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
+            <h1>Privacy Policy</h1>
+            <p><strong>Mobile Information:</strong> No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+        </body>
+        </html>
+    `);
+});
+
+app.get('/terms-and-conditions', (req, res) => {
+    res.send(`
+        <html>
+        <body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
+            <h1>Terms and Conditions</h1>
+            <p><strong>Program Description:</strong> This service sends community notifications, event reminders, and secure authentication codes.</p>
+            <p><strong>Opt-Out:</strong> You can cancel the SMS service at any time. Just text "STOP" to our number.</p>
+            <p><strong>Help:</strong> If you need assistance, text "HELP" to our number.</p>
+            <p><strong>Rates:</strong> Message and data rates may apply. Message frequency varies.</p>
+        </body>
+        </html>
+    `);
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
