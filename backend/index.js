@@ -59,7 +59,7 @@ app.use('/api/asignaciones', asignacionesRoutes);
 app.use('/api/solicitudes', solicitudesRoutes);
 
 
-pp.get('/privacy-policy', (req, res) => {
+app.get('/privacy-policy', (req, res) => {
   res.send(`
     <html>
       <body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
@@ -91,7 +91,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something broke!' });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(Server running on port ${PORT});
 });
