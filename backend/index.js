@@ -12,7 +12,7 @@ const app = express();
 // Servir frontend estático
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('*', (req, res, next) => {
+app.get('/{*path}', (req, res, next) => {
   if (req.path.startsWith('/api')) return next();
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
