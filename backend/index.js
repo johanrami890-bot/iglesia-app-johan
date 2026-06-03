@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
 });
 
 // Servir frontend estático (AL FINAL)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { etag: false, maxAge: 0 }));
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
