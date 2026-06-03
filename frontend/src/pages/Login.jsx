@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// v2import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eye, EyeOff, ChevronLeft, X, Shield, FileText } from 'lucide-react';
